@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}create  list{% endblock title %}
+
+{% block content %}
+
+<br>
+<div class="card">
+
+
+            <form action="{% url 'create-list' %}" method="POST">
+
+              {% csrf_token %}
+              {{ form|crispy }}
+        <input type="submit" value="Create" class="btn btn-outline-primary">
+            </form>
+
+
+  </div>
+
+{% endblock content %}

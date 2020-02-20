@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}My Wishes{% endblock title %}
+
+{% block content %}
+<a href="{% url 'wish_create' %}">
+  <input type="submit" value="Create" class="btn btn-outline-primary">
+</a> <br><br><br>
+{% for wish in wishs  %}
+{%if request.user == wish.owner %}
+<div class="container-fluid border border-dark ">
+{% if wish.image %}
+  <br><br>  <img src='{{wish.image.url}}' enctype="multipart/form-data" alt="no pic XD " height="250" width="250">
+{% endif %}
+  <p> wish NAME: {{wish.name}}</p>
+  <p> url: {{wish.url}}</p>
+</div>
+{%endif%}
+{%endfor%}
+
+{% endblock content %}

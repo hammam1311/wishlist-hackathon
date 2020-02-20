@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}My Lists{% endblock title %}
+
+{% block content %}
+
+<p></p>
+
+
+
+<a class="nav-link" href="{% url 'list' %}">
+  <input type="submit" value="My Wish list" class="btn btn-secondary btn-lg btn-block">
+</a>
+<br><br><br><br>
+  <a class="nav-link" href="{% url 'user-discover' %}">
+    <input type="submit" value="Discover Lists" class="btn btn-secondary btn-lg btn-block">
+  </a>
+
+{% endblock content %}

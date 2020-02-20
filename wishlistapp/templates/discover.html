@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}My Wishes{% endblock title %}
+
+{% block content %}
+</a> <br><br><br>
+{% for wish in wishs  %}
+<div class="container-fluid border border-dark ">
+{% if wish.image %}
+  <br><br>  <img src='{{wish.image.url}}' enctype="multipart/form-data" alt="no pic XD " height="250" width="250">
+{% endif %}
+  <p> wish NAME: {{wish.name}}</p>
+  <p> url: {{wish.url}}</p>
+</div>  <br><br>   <br>
+{%endfor%}
+
+{% endblock content %}
